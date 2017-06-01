@@ -21,7 +21,7 @@
  */
 namespace TestHelpers;
 
-use GuzzleHttp\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Helper to administrate users (and groups) through the provisioning API
@@ -232,7 +232,7 @@ class UserHelper {
 		$baseUrl, $adminUser, $adminPassword, $search =""
 	) {
 		$result = self::getGroups($baseUrl, $adminUser, $adminPassword, $search);
-		$groups = $result->xml()->xpath(".//groups")[0];
+		$groups = HttpRequestHelper::getResponseXml($result)->xpath(".//groups")[0];
 		$return = [];
 		foreach ($groups as $group) {
 			$return[] = $group->__toString();
