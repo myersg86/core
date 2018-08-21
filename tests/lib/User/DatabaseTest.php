@@ -30,8 +30,6 @@ use Test\Traits\PasswordTrait;
  * @group DB
  */
 class DatabaseTest extends BackendTestCase {
-	use PasswordTrait;
-
 	/** @var array */
 	private $users;
 
@@ -60,7 +58,7 @@ class DatabaseTest extends BackendTestCase {
 	 * Tests that a \OC\User\ArgumentNotSetException is thrown when the supplied password is empty.
 	 *
 	 * @param string $password
-	 * @dataProvider providesEmptyPasswordData
+	 * @dataProvider getEmptyValues
 	 * @expectedException \InvalidArgumentException
 	 * @expectedExceptionMessage Password cannot be empty
 	 */

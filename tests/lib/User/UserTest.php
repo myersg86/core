@@ -34,8 +34,6 @@ use Test\Traits\PasswordTrait;
  * @package Test\User
  */
 class UserTest extends TestCase {
-	use PasswordTrait;
-
 	/** @var AccountMapper | \PHPUnit_Framework_MockObject_MockObject */
 	private $accountMapper;
 	/** @var Account */
@@ -139,7 +137,7 @@ class UserTest extends TestCase {
 
 	/**
 	 * @param string $password
-	 * @dataProvider providesEmptyPasswordData
+	 * @dataProvider getEmptyValues
 	 * @expectedException \InvalidArgumentException
 	 * @expectedExceptionMessage Password cannot be empty
 	 * @throws \InvalidArgumentException

@@ -526,6 +526,20 @@ abstract class TestCase extends BaseTestCase {
 	}
 
 	/**
+	 * @return array A list of items equivalent to an empty values
+	 */
+	public function getEmptyValues() {
+		return [
+			[''],
+			[0],
+			[null],
+			[false],
+			[FALSE],
+			[NULL],
+		];
+	}
+
+	/**
 	 * @param string $string
 	 * @return bool|resource
 	 */
