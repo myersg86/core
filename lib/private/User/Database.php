@@ -127,11 +127,11 @@ class Database extends Backend implements IUserBackend, IProvidesHomeBackend, IP
 	 * @return bool
 	 *
 	 * @throws \OC\DatabaseException
-	 * @throws ArgumentNotSetException
+	 * @throws \InvalidArgumentException
 	 */
 	public function setPassword($uid, $password) {
 		if ($this->isEmpty($password)) {
-			throw new ArgumentNotSetException('Password cannot be empty');
+			throw new \InvalidArgumentException('Password cannot be empty');
 		}
 
 		if ($this->userExists($uid)) {

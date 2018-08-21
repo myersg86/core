@@ -61,7 +61,7 @@ class DatabaseTest extends BackendTestCase {
 	 *
 	 * @param string $password
 	 * @dataProvider providesEmptyPasswordData
-	 * @expectedException \OC\User\ArgumentNotSetException
+	 * @expectedException \InvalidArgumentException
 	 * @expectedExceptionMessage Password cannot be empty
 	 */
 	public function testCannotSetEmptyPassword($password) {

@@ -258,11 +258,11 @@ class User implements IUser {
 	 * @param string $password
 	 * @param string $recoveryPassword for the encryption app to reset encryption keys
 	 * @return bool
-	 * @throws ArgumentNotSetException
+	 * @throws \InvalidArgumentException
 	 */
 	public function setPassword($password, $recoveryPassword = null) {
 		if ($this->isEmpty($password)) {
-			throw new ArgumentNotSetException('Password cannot be empty');
+			throw new \InvalidArgumentException('Password cannot be empty');
 		}
 
 		return $this->emittingCall(function () use (&$password, &$recoveryPassword) {

@@ -140,9 +140,9 @@ class UserTest extends TestCase {
 	/**
 	 * @param string $password
 	 * @dataProvider providesEmptyPasswordData
-	 * @expectedException \OC\User\ArgumentNotSetException
+	 * @expectedException \InvalidArgumentException
 	 * @expectedExceptionMessage Password cannot be empty
-	 * @throws \OC\User\ArgumentNotSetException
+	 * @throws \InvalidArgumentException
 	 */
 	public function testSetEmptyPasswordNotPermitted($password) {
 		(new User(
