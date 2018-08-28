@@ -1474,5 +1474,5 @@ $CONFIG = array(
 /**
  * Async dav extensions can be enabled or disabled.
  */
-'dav.enable.async' => true,
+'dav.enable.async' => false,
 );
