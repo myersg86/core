@@ -498,6 +498,7 @@ class Share20OCS {
 		$share->setShareType($shareType);
 		$share->setSharedBy($this->currentUser->getUID());
 
+		$share->setShouldHashPassword($this->request->getParam('shouldHashPassword', true));
 		try {
 			$share = $this->shareManager->createShare($share);
 		} catch (GenericShareException $e) {
@@ -803,6 +804,7 @@ class Share20OCS {
 			} elseif ($password !== null) {
 				$share->setPassword($password);
 			}
+			$share->setShouldHashPassword($this->request->getParam('shouldHashPassword', true));
 		} else {
 			// For other shares only permissions is valid.
 			if ($permissions === null) {

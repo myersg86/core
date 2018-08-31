@@ -112,6 +112,13 @@
 		getLink: function() {
 			var base = OC.getProtocol() + '://' + OC.getHost();
 			return base + OC.generateUrl('/s/') + this.get('token');
+		},
+
+		shouldHash: function (status) {
+			if (status === false) {
+				return false;
+			}
+			return true;
 		}
 	});
 

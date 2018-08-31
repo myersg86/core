@@ -159,6 +159,7 @@
 			if (password) {
 				// only set password explicitly if changed
 				attributes.password = password;
+				attributes.shouldHashPassword = this.model.shouldHash(true);
 			}
 
 			var validates = true;
